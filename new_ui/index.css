@@ -1,0 +1,1068 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Cairo", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@media (max-width: 500px) {
+    body {
+        min-width: fit-content;
+    }
+}
+
+section {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ----for all----- */
+
+.custom_link_text {
+    text-decoration: none;
+    color: black;
+}
+
+i {
+    transition: 0.2s;
+    font-size: 1.05rem;
+    color: rgb(88, 88, 88);
+}
+
+.fa-facebook-f:hover {
+    color: blue;
+}
+
+.fa-twitter:hover {
+    color: #00d9ff;
+}
+
+
+.fa-linkedin:hover {
+    color: #016cde;
+}
+
+.fa-youtube:hover {
+    color: #ff0000;
+}
+
+.fa-instagram:hover {
+    color: #ff009d;
+}
+
+.fa-user:hover {
+    color: #75bd5d;
+}
+
+
+/* -----for header------- */
+
+
+/* ---header > topbar----- */
+
+.section_header {
+    height: auto;
+}
+
+.header_topbar {
+    background-color: #f8f8f8;
+}
+
+.header_container {
+    height: 40px;
+    max-width: 1280px;
+    min-width: 280px;
+    /* border: 1px solid red; */
+}
+
+.header_container_child {
+    font-size: 0.95rem;
+}
+
+.header_socail_links {
+    min-width: 150px;
+}
+
+/* ---header > navbar ----- */
+
+.navbar_container {
+    max-width: 1140px;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar_icons {
+    font-size: 1.1rem;
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.2s;
+    margin-right: 0.6rem;
+    margin-left: 0.6rem;
+}
+
+.nav-link {
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: #75bd5d;
+}
+
+.fa-search:hover {
+    color: #75bd5d;
+}
+
+.fa-heart:hover {
+    color: #75bd5d;
+}
+
+.fa-cart-shopping:hover {
+    color: #75bd5d;
+}
+
+.search_bar_field,
+.search_bar_responsive {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0px 0px 15px 2px #00000025;
+    width: fit-content !important;
+
+}
+
+.custom_search {
+    outline: none;
+    border: none;
+    height: 45px;
+    font-size: 0.9rem;
+    width: 700px;
+    min-width: 300px;
+    padding-left: 15px;
+}
+
+.custom_responsive_search {
+    outline: none;
+    border: none;
+    height: 45px;
+    font-size: 0.9rem;
+    width: 500px;
+    min-width: 280px !important;
+    padding-left: 15px;
+}
+
+
+.navbar_links_media_query {
+    display: none;
+}
+
+.navbar_login_media_query {
+    display: none;
+}
+
+.navbar_email_media_query {
+    display: none;
+}
+
+.header_bottombar {
+    height: 70px;
+    max-width: 1140px;
+}
+
+.header_mobile_search_bar {
+    height: 50px;
+    max-width: 1140px;
+}
+
+.navbar_bottom_buttons {
+    color: white;
+    background-color: #75bd5d;
+    min-width: 150px;
+    border-radius: 2px;
+    transition: 0.2s;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 0;
+}
+
+.navbar_bottom_buttons:hover {
+    color: white;
+    background-color: #70b457;
+    ;
+}
+
+.navbar_dropdown {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.navbar_dropdown::-webkit-scrollbar {
+    width: 5px;
+}
+
+.navbar_dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.navbar_dropdown::-webkit-scrollbar-thumb {
+    background: #d2d2d2;
+    border-radius: 20px;
+}
+
+.navbar_dropdown::-webkit-scrollbar-thumb:hover {
+    background: #bbbbbb;
+}
+
+.dropdown-item {
+    transition: 0.3s;
+
+}
+
+.dropdown-item:hover {
+    transform: translateX(3%);
+}
+
+.btn_tobe_show {
+    display: none;
+}
+
+.header_mobile_search_bar {
+    display: none;
+}
+
+/* ----header media query---- */
+
+
+/* 900px responsive  */
+
+@media (max-width: 992px) {
+    .navbar_container {
+        position: relative;
+        top: -15px !important;
+        box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.103) !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .custom_search {
+        display: none !important;
+    }
+
+    .header_mobile_search_bar {
+        display: block !important;
+    }
+
+    .btn_tobe_hidden {
+        display: none;
+    }
+
+    /* .btn_tobe_show{
+        display: block;
+    } */
+}
+
+@media (min-width: 700px) {
+    .custom_search {
+        display: block !important;
+    }
+
+    .header_mobile_search_bar {
+        display: none !important;
+    }
+
+    .btn_tobe_hidden {
+        display: block;
+    }
+
+    /* .btn_tobe_show{
+        display: none;
+    } */
+}
+
+
+/* ----carousel header starts----- */
+
+.header_slider_section {
+    max-width: 1140px;
+    min-width: 280px;
+    margin: 1rem auto;  
+}
+
+.slider_image_parent {
+    /* border: 1px solid red; */
+    max-height: 600px;
+    min-height: 300px;
+}
+
+.category_slider_section {
+    width: auto;
+    min-width: 280px;
+    margin: 1rem auto;
+}
+
+
+
+/* ------bradns section css starts ----  */
+
+.top_cards_section {
+    max-width: 1150px;
+    min-width: 280px;
+    margin: 1rem auto;
+}
+
+.brands_section,
+.how_it_works_section {
+    max-width: 1150px;
+    min-width: 280px;
+    margin: 1rem auto;
+}
+
+.brand-logo-wrapper {
+    border: 1px solid #f7f7f7;
+}
+
+.brand-separator {
+    background: #77c427;
+    height: 3px;
+    width: 140px;
+}
+
+@media screen and (max-width: 350px) {
+    .brand-logo {
+        padding: 9% !important;
+    }
+}
+
+
+
+
+/* category slider  */
+
+#category_slider {
+    min-height: 300px;
+    max-height: fit-content;
+    min-width: 280px;
+    max-width: 1140px;
+}
+
+.slider_top_bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.control_btns_group {
+    height: 50px;
+    position: relative;
+    width: fit-content;
+}
+
+.controller_btns {
+    background-color: rgb(195, 195, 195);
+    padding: 5px;
+    color: rgb(108, 108, 108);
+    font-size: 1.3rem;
+    border-radius: 5px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 90%;
+    margin: 10px auto;
+}
+
+
+.menu-item {
+    order: 0;
+    flex: 1 140px;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    flex-direction: column;
+    background-color: #ffffff00;
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    -webkit-transition: all 0.2s;
+    border-radius: 10px;
+    transition: all 0.2s;
+    min-width: 140px !important;
+    max-width: 140px;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5%);
+}
+
+.menu-item-image {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.menu-item:hover .menu-item-image {
+    background-color: #eaeaea;
+}
+
+.menu-item-image-img {
+    width: 60%;
+    height: 60%;
+}
+
+.menu-item-details {
+    display: flex;
+    color: black;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item-title {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    flex-grow: 0;
+    transition: 0.3s;
+}
+
+
+@media only screen and (max-width: 795px) {
+    .menu-container {
+        width: 100% !important;
+    }
+}
+
+
+
+/* -----cards----- */
+
+.top_cards_section {
+    max-width: 1140px;
+    margin: auto;
+}
+
+
+.product-img {
+    max-width: 300px;
+}
+
+@media screen and (max-width: 325px) {
+    .product-img {
+        max-width: 180px;
+        margin-bottom: 15px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .suggest_pro_price {
+        font-size: calc(0.9rem + 0.6vw);
+    }
+
+    .suggest_pro_name {
+        font-size: calc(0.7rem + 0.6vw);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .suggest_pro_price {
+        font-size: calc(0.9rem + 0.6vw);
+    }
+
+    .suggest_pro_name {
+        font-size: calc(0.7rem + 0.6vw);
+        line-height: 1.1 !important;
+        height: 29px;
+    }
+}
+
+.suggest_pro_name {
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1;
+}
+
+.suggest_pro_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: break-spaces;
+    line-height: 1;
+    height: 33px;
+}
+
+.suggest_pro_weight {
+    height: 30px;
+}
+
+.suggest_pro_weight {
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+}
+
+
+/* mobile app section  */
+
+.mobile_app_section {
+    max-width: auto;
+    min-width: 280px;
+    height: fit-content !Important;
+    margin: 1rem auto;
+    padding: 0;
+    background: radial-gradient(#e04242ea, #801919ea), url(https://img.freepik.com/premium-vector/seamless-pattern-gas-station-store_348818-1939.jpg?size=626&ext=jpg&ga=GA1.2.518298172.1677491787&semt=ais) center;
+}
+
+
+
+.app_details_container,
+.postcode_details_container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#app_text_details,
+#postcode_text_details {
+    padding: 4rem 6rem 4rem 6rem;
+}
+
+.app_text_details_para {
+    font-size: 1.05rem;
+    max-width: 530px;
+    min-width: 400px;
+}
+
+.app_details_image,
+.delivery_details_image {
+    max-height: 360px;
+}
+
+
+@media (max-width: 1000px) {
+
+    #app_text_details,
+    #postcode_text_details {
+        padding: 2rem 4rem 2rem 4rem !Important;
+    }
+}
+
+@media (max-width: 1000px) {
+    #app_photo_details {
+        text-align: center !Important;
+    }
+
+    .app_text_details_para {
+        max-width: 600px;
+    }
+}
+
+.download_apps_links,
+.postcode_search {
+    /* border: 1px solid rgb(251, 255, 0); */
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.partner_app_links {
+    /* border: 1px solid red; */
+    height: 100%;
+    max-width: auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #0000005e, #7c7c7c22), url('https://cdn.pixabay.com/photo/2019/03/13/11/07/supermarket-4052658__340.jpg') no-repeat center / cover;
+}
+
+.download_app_store {
+    max-width: 200px;
+    min-width: 140px;
+}
+
+.download_google_play {
+    max-width: 200px;
+    min-width: 140px;
+}
+
+
+
+.search_postcode_section {
+    max-width: auto;
+    min-width: 280px;
+    height: fit-content !Important;
+    margin: 1rem auto;
+    padding: 0;
+    background: radial-gradient(#b3fd7fea, #5dab39e6), url(https://img.freepik.com/premium-vector/seamless-pattern-gas-station-store_348818-1939.jpg?size=626&ext=jpg&ga=GA1.2.518298172.1677491787&semt=ais) center;
+}
+
+.search_bar_form {
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.271);
+}
+
+.header_search_para {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.inner_form {
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.input-field {
+    height: 50px;
+}
+
+#search {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    font-size: 16px;
+    color: #070707;
+    font-weight: 500;
+}
+
+#search::-webkit-input-placeholder {
+    color: #777777;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#search:hover,
+#search:focus {
+    box-shadow: none;
+    outline: 0;
+    border-color: #fff;
+}
+
+.input-field.second-wrap {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.fourth-wrap {
+    width: 70px;
+}
+
+.header_search_location_btn {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border: 0;
+    cursor: pointer;
+}
+
+.third-wrap {
+    width: 74px;
+}
+
+.btn-search {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    background: #6eb14f;
+    transition: all .2s ease-out, color .2s ease-out;
+}
+
+.btn-search #search_svg {
+    width: 16px;
+}
+
+.btn-search:hover {
+    background: #639a4a;
+}
+
+.btn-search:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 500px) {
+    .search_bar {
+        padding: 1.5rem;
+    }
+
+    .third-wrap {
+        width: 85px;
+    }
+
+    .fourth-wrap {
+        width: 70px;
+    }
+
+    #search {
+        padding: 5px 10px;
+    }
+}
+
+.how_it_works_image_section {
+    height: 100px !important;
+    text-align: center;
+}
+
+.how_it_works_image {
+    height: 100%;
+}
+
+.how_it_works_column {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+.column_hover {
+    transition: 0.3s;
+}
+
+.column_hover:hover {
+    scale: 1.04;
+    cursor: pointer;
+}
+
+
+
+/* footer starts  */
+
+
+.useful_links_parentl {
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer_section {
+    background: #fff;
+    position: relative;
+}
+
+.footer_content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer_logo {
+    margin-bottom: 30px;
+}
+
+.footer_logo_image {
+    max-width: 200px;
+}
+
+.footer_about_text {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #7e7e7e;
+    line-height: 28px;
+}
+
+.footer_follow_us {
+    color: #000;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+.footer_social_links {
+    color: #fff !important;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.footer_social_icon i.fab {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+
+.facebook-bg {
+    background: #3B5998;
+}
+
+.twitter-bg {
+    background: #55ACEE;
+}
+
+.linkedin-bg {
+    background-color: #016cde;
+}
+
+.youtube-bg {
+    background-color: red;
+}
+
+.instagram-bg {
+    background: linear-gradient(to bottom right, #c800ff, #ff009d, rgb(255, 162, 0));
+}
+
+.footer_widget_heading_h3 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.footer_widget_heading_h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 50px;
+    background: #ff2222;
+}
+
+.footer_useful_links_chlids {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+}
+
+.footer_useful_links:hover {
+    color: #ff2222;
+}
+
+.footer_useful_links {
+    text-decoration: none;
+    color: #878787;
+    text-transform: capitalize;
+}
+
+.subscribe_form {
+    position: relative;
+    overflow: hidden;
+}
+
+.subscribe_form_input {
+    width: 100%;
+    padding: 14px 28px;
+    background: #ffffff;
+    border: 1px solid #2E2E2E;
+    color: #fff;
+}
+
+.subscribe_form_btn {
+    position: absolute;
+    right: 0;
+    background: #ff2222;
+    padding: 15px 20px;
+    border: 1px solid #ff2222;
+    top: 0;
+}
+
+.subscribe_form_btn .fa-telegram-plane {
+    color: #fff;
+    font-size: 22px;
+    transform: rotate(-6deg);
+}
+
+.copyright-area {
+    background: #ebebeb;
+    padding: 25px 0;
+}
+
+.copyright_text_para {
+    margin: 0;
+    font-size: 14px;
+    color: #000000;
+}
+
+
+/* partner_section  */
+
+.partner_section {
+    max-width: 1150px;
+    min-width: 280px;
+    margin: 1rem auto;
+}
+
+.partners_container {
+    height: fit-content;
+    justify-content: space-evenly;
+}
+
+.store_signup_button_parent {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.store_signup_button {
+    background-color: #99bd45;
+    color: white;
+    font-size: 1.03rem;
+    transition: 0.2s;
+}
+
+.store_signup_button:hover {
+    background-color: #91b147;
+    color: white;
+}
+
+
+
+
+
+
+
+
+/* ============================================================
+============================================================
+============================================================ */
+
+/* blogs css  */
+
+
+.blog_section {
+    max-width: 1180px;
+    min-width: 280px;
+    margin: 1rem auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 3px;
+    transition: 0.4s;
+    border-radius: 15px;
+    overflow: hidden;
+    display: block;
+}
+
+.card:hover {
+    scale: 1.02;
+}
+
+.card .img-container {
+    height: 250px;
+    width: 100%;
+    /* grid-column: ; */
+    background-color: #c1b7b4;
+    background-size: cover;
+    background-position: center center;
+}
+
+.biryani {
+    background-image: url('https://trolleymate.co.uk/assets/img/preparing-an-authentic-chicken-biryani-dish.jpg');
+}
+
+.pasta {
+    background-image: url('https://trolleymate.co.uk/assets/img/easy-recipes-to-make-fettuccine-pasta.webp');
+}
+
+.spaghetti {
+    background-image: url('https://trolleymate.co.uk/assets/img/healthy-spaghetti-recipes-that-will-satisfy-your-cravings.jpg');
+}
+
+.adeleFood {
+    background-image: url('https://trolleymate.co.uk/assets/img/do-you-know-what-the-adeles-likes-to-eat.jpeg');
+}
+
+.card-content {
+    grid-column: 3 / 5;
+    padding: 10px 30px;
+    border-left: 1px solid #ccc;
+}
+
+.blogHeading {
+    font-weight: 600;
+}
+
+.text_lightContent {
+    color: #6d6d6d;
+}
+
+.blogInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-content .authorName {
+    /* border-top: 1px solid #cdcdcd; */
+    font-weight: 600;
+    /*margin-top: 25px;
+        padding: 25px 0 10px 0; */
+    color: #4c4c4c;
+}
+
+.datePublish {
+    font-weight: 600;
+
+    color: #5f5f5f;
+}
+
+@media only screen and (max-width: 992px) {
+    .card {
+        display: block;
+    }
+
+    .card .img-container {
+        height: 250px;
+        width: 100%;
+    }
+
+    .card-content {
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .card-content {
+        padding: 0.7rem !important;
+    }
+
+}
+

@@ -1,0 +1,489 @@
+<!-- <nav class="navbar navbar-expand-sm fixed-top glossy-nav"> -->
+    <div class="bg-white" id="main_nav_wrap">
+        <div class="container">
+            <div class="container-fluid text-center pt-2 h4 off_notification">
+                <span>Get £10 OFF On Your 1st Order <a href="<%= locals.host_name %>/promo-detail" class="text-body text-decoration-underline">More Details</a> </span>
+                <i class="fa fa-times position-relative ms-2 cursor-pointer float-end top-2 text-secondary opacity-75" id="close_off_notification"></i>
+            </div>
+        </div>
+        <div class="container-fluid d-flex justify-content-between align-items-center py-1 bg-light">
+            <div>Follow us</div>
+            <div>
+                <a href="https://www.facebook.com/TrolleyMate.UK" target="_blank" class="text-decoration-none text-black" rel="noopener noreferrer" aria-label="TrolleyMate Facebook"><i class="fab fa-facebook-f px-2 py-1 rounded-3 me-1"></i></a>
+                <a href="https://twitter.com/matetrolley?s=11" target="_blank" class="text-decoration-none text-black" rel="noopener noreferrer" aria-label="TrolleyMate Twitter"><i class="fab fa-twitter px-2 py-1 rounded-3 me-1"></i></a>
+                <a href="https://www.linkedin.com/company/trolleymateuk/" target="_blank" class="text-decoration-none text-black" rel="noopener noreferrer" aria-label="TrolleyMate Linkedin"><i class="fab fa-linkedin-in px-2 py-1 rounded-3 me-1"></i></a>
+                <a href="https://www.youtube.com/channel/UCumxoBlcxqyQ0hfwNj779RQ" target="_blank" class="text-decoration-none text-black" rel="noopener noreferrer" aria-label="TrolleyMate Youtube"><i class="fab fa-youtube px-2 py-1 rounded-3 me-1"></i></a>
+                <a href="https://www.instagram.com/trolleymateuk/" target="_blank" class="text-decoration-none text-black" rel="noopener noreferrer" aria-label="TrolleyMate Instagram"><i class="fab fa-instagram px-2 py-1 rounded-3 me-1"></i></a>            
+            </div>
+        </div>
+        <div class="container" id="main_nav">
+            <nav class="navbar navbar-expand-sm bg-white">
+                <div class="container-fluid nav-wrap">
+                    <button class="navbar-toggler shadow-none border-0 p-2" id="openNav" onclick="openNav()">
+                        <i class="fa fa-bars text-theme"></i>
+                    </button>
+                    <button class="navbar-toggler shadow-none border-0 p-2" id="closeNav" onclick="closeNav()">
+                        <i class="fa fa-bars text-theme"></i>
+                    </button>
+                    <div id="mySidenav" class="sidenav top-0">
+                        <div class="sidenav-wrapper">
+                            <div class="mb-1 d-flex justify-content-end">
+                                <button class="navbar-toggler shadow-none border-0 p-2" id="closeNav" onclick="closeNav()" style="display: block;"> <i class="fa fa-times text-theme"></i> </button>
+                            </div>
+                            <% if(!user){ %>
+                            <span class="nav-link btn-signin text-white bg-theme mx-2 cursor-pointer" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#Signin">Sign In</span>
+                            <% } %>
+                            <ul class="sidebar-menu">
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-link sidebar-menu-list-child-link" href="<%= locals.host_name %>/">
+                                        <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/side_home_i.webp" alt="Home_logo" width="0" height="0">
+                                        Home
+                                    </a>
+                                </li>
+                                <% if(user){ %>
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-list-child-link" href="<%= locals.host_name %>/profile">
+                                        <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/profile_user.webp" alt="Profile_logo">
+                                        Profile
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-list-child-link" href="<%= locals.host_name %>/payment">
+                                        <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/profile_payment.webp" alt="TrolleyMate Payment">
+                                        Payment
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-list-child-link" href="<%= locals.host_name %>/orders">
+                                        <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/profile_wallet.webp" alt="TrolleyMate Orders">
+                                        Orders
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-list-child-link" href="<?php echo $root ?>/mainpage/mainpage.php">
+                                        <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/profile_fav.webp" alt="TrolleyMate Favorites">
+                                        Favorites
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-list-child-link" href="<%= locals.host_name %>/user-logout">
+                                        <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/logout_i.webp" alt="TrolleyMate Logout">
+                                        Logout
+                                    </a>
+                                </li>
+                                <% } %>
+                                <hr class="m-0">
+                                <li class="sidebar-menu-list-child">
+                                    <a class="sidebar-menu-list-child-link" href="<%= locals.host_name %>/contact">
+                                    <img class="sidebar-menu-list-child-link-img" src="<%= locals.host_name %>/assets/img/help_i.webp" alt="Contact_Page" width="0" height="0">
+                                        Help
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="navbar-brand" href="<%= locals.host_name %>/">
+                        <img class="nav_logo" src="<%= locals.host_name %>/assets/img/Trolleymate_logo.webp" alt="TrolleyMate Home" width="0" height="0">
+                    </a>
+                    
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <div class="container-fluid text-end">
+                            <div class="d-none d-md-block">
+                                <div class="input-group" role="tablist">
+                                    <span class="input-group-text bg-light" id="basic-addon1"><i class='fa fa-search'></i></span>
+                                    <input class='searching form-control shadow-none border' type='text' placeholder='Search items and stores' aria-label='Search items and stores' aria-describedby="dropdownSuggestions" id='dropdownSuggestions' data-bs-toggle='dropdown' aria-expanded='false' role="tab">
+                                    <ul class='dropdown-menu dropdown-menu-end px-2 row suggestions' aria-labelledby='dropdownSuggestions'></ul>
+                                </div>
+                            </div>
+                            <button class="searchToggler me-2 bg-transparent border-0 shadow-none d-md-none d-sm-inline"><i class="fa fa-search text-theme"></i></button>
+                        </div>
+                        <ul class="navbar-nav align-items-center mb-0">
+                            <% if(user){ %>
+                                <li class="dropdown me-2 nav-item">
+                                    <span class="dropdown-toggle nav-link btn-signin text-white bg-theme px-2 cursor-pointer" href="#" role="button" data-bs-toggle="dropdown"> <i class="fa fa-user me-1"></i> My Account</span>
+                                    <ul class="dropdown-menu dropdown-menu-end p-0 ">
+                                        <li><a class="dropdown-item py-1 border-bottom text-muted fontsize-13 account-opiton" href="<%= locals.host_name %>/profile"><i class="fa me-2 fa-user"></i> Profile</a></li>
+                                        <li><a class="dropdown-item py-1 border-bottom text-muted fontsize-13 account-opiton" href="<%= locals.host_name %>/payment"><i class="fa me-2 fa-credit-card"></i> Payment</a></li>
+                                        <li><a class="dropdown-item py-1 border-bottom text-muted fontsize-13 account-opiton" href="<%= locals.host_name %>/orders"><i class="fa me-2 fa-history"></i> Orders</a></li>
+                                        <li><a class="dropdown-item py-1 border-bottom text-muted fontsize-13 account-opiton" href="#"><i class="fa me-2 fa-bookmark"></i> Favorites</a></li>
+                                        <li><a class="dropdown-item py-1 border-bottom text-muted fontsize-13 account-opiton" href="<%= locals.host_name %>/user-logout"><i class="fa me-2 fa-sign-out"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            <% }else{ %>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-signin text-white bg-theme text-nowrap cursor-pointer" href="<%= locals.host_name %>/login">Sign In</a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="align-items-center d-flex">
+                        <button class="searchToggler me-2 bg-transparent border-0 shadow-none d-sm-none"><i class="fa fa-search text-theme"></i></button>
+                        <!-- <button class="nav_search navbar-toggler shadow-none border-0">
+                            <i class="fa fa-search text-theme"></i>
+                        </button> -->
+                        <ul class="navbar-nav align-items-center mb-lg-0 nav-cart-wrap">
+                            <li class="nav-item" id="nav-cart">
+                                <%- include('navbar-cart.ejs') %>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!------------------------ mobile search will come here ------------------------>
+            <div class="container-fluid pb-1 d-none" id="mobileSearcher">
+                <div class="input-group">
+                    <span class="input-group-text bg-light" id="basic-addon1"><i class='fa fa-search'></i></span>
+                    <input class='searching form-control shadow-none border' type='text' placeholder='Search items and stores' aria-label='Search items and stores [Mobile]' aria-describedby="MobiledropdownSuggestions" id='MobiledropdownSuggestions' data-bs-toggle='dropdown' aria-expanded='false'>
+                    <ul class='dropdown-menu dropdown-menu-end px-2 row suggestions' aria-labelledby='MobiledropdownSuggestions'></ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- <div class="container-fluid">
+                <div class='item-search dropdown'><i class='fa fa-search me-2'></i><input class='searching' type='text' placeholder='Search items and stores' id='dropdownSuggestions' data-bs-toggle='dropdown' aria-expanded='false'><ul class='dropdown-menu row' id='suggestions' aria-labelledby='dropdownSuggestions'></ul></div>
+            </div> -->
+            <!-- <div class="nav-support"></div> -->
+            <!-- <a class="nav-link btn-signin text-white bg-theme" data-bs-toggle="modal" data-bs-target="#NoService">Sign In</a> -->
+            <nav class="navbar navbar-expand p-0 mt-2">
+                <div class="container-fluid">
+                    <ul class="navbar-nav w-100 py-1" id="menu">
+                        <li class="nav-item menu-nav-item dropdown MenuDropdown_wrap">
+                            <a class="nav-link dropdown-toggle text-black remove_default_arrow MenuDropdown text-uppercase" id="StoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Stores 
+                                <i class="fa fa-caret-down"></i>
+                            </a> 
+                            <ul class="dropdown-menu MenuDropdown_menu px-0 py-2 myMenuscrollBar" id="StoresDropdown_content" aria-labelledby="StoresDropdown">
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="a-and-a-halal-butchers-and-grocers" data-store="a-and-a-halal-butchers-and-grocers" href="<%= locals.host_name %>/a-and-a-halal-butchers-and-grocers">A &amp; A Halal Butchers &amp; Grocers<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="av-cash-and-carry-ltd" data-store="av-cash-and-carry-ltd" href="<%= locals.host_name %>/av-cash-and-carry-ltd">AV Cash and Carry Ltd<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="alnoor-tulse-hill-butcher" data-store="alnoor-tulse-hill-butcher" href="<%= locals.host_name %>/alnoor-tulse-hill-butcher">Alnoor Tulse Hill Butcher<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="amar-bazar" data-store="amar-bazar" href="<%= locals.host_name %>/amar-bazar">Amar Bazar<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="ambrosia" data-store="ambrosia" href="<%= locals.host_name %>/ambrosia">Ambrosia<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="azeem-halal-meat-and-grocery" data-store="azeem-halal-meat-and-grocery" href="<%= locals.host_name %>/azeem-halal-meat-and-grocery">Azeem Halal Meat &amp; Grocery<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="bb-fatima-cash-and-carry" data-store="bb-fatima-cash-and-carry" href="<%= locals.host_name %>/bb-fatima-cash-and-carry">BB Fatima Cash and Carry<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="barking-food-centre" data-store="barking-food-centre" href="<%= locals.host_name %>/barking-food-centre">Barking Food Centre<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="barking-food-and-wine" data-store="barking-food-and-wine" href="<%= locals.host_name %>/barking-food-and-wine">Barking food and wine<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="best-food-supermarket" data-store="best-food-supermarket" href="<%= locals.host_name %>/best-food-supermarket">Best Food Supermarket<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="best-quality-meat" data-store="best-quality-meat" href="<%= locals.host_name %>/best-quality-meat">Best Quality Meat<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="blackheath-food-centre" data-store="blackheath-food-centre" href="<%= locals.host_name %>/blackheath-food-centre">Blackheath Food Centre<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="bromley-food-centre" data-store="bromley-food-centre" href="<%= locals.host_name %>/bromley-food-centre">Bromley Food Centre<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="cinar-village-market-ltd" data-store="cinar-village-market-ltd" href="<%= locals.host_name %>/cinar-village-market-ltd">Cinar village market ltd<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="dadoos-food-store" data-store="dadoos-food-store" href="<%= locals.host_name %>/dadoos-food-store">Dadoo's Food Store<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="ecklee-supermarket" data-store="ecklee-supermarket" href="<%= locals.host_name %>/ecklee-supermarket">Ecklee Supermarket<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="economic-store" data-store="economic-store" href="<%= locals.host_name %>/economic-store">Economic Store<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="eltham-international-market" data-store="eltham-international-market" href="<%= locals.host_name %>/eltham-international-market">Eltham International Market<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="ereko-african-market" data-store="ereko-african-market" href="<%= locals.host_name %>/ereko-african-market">Ereko African Market<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="everyday-bazar" data-store="everyday-bazar" href="<%= locals.host_name %>/everyday-bazar">Everyday Bazar<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="fresh-bazar" data-store="fresh-bazar" href="<%= locals.host_name %>/fresh-bazar">Fresh Bazar<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="frozen-plus" data-store="frozen-plus" href="<%= locals.host_name %>/frozen-plus">Frozen Plus<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="global-fresh-bazar" data-store="global-fresh-bazar" href="<%= locals.host_name %>/global-fresh-bazar">Global Fresh Bazar<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="go-fresh-food" data-store="go-fresh-food" href="<%= locals.host_name %>/go-fresh-food">Go Fresh Food<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="khan-cash-and-carry" data-store="khan-cash-and-carry" href="<%= locals.host_name %>/khan-cash-and-carry">Khan Cash &amp; Carry<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="latif-halal-meat" data-store="latif-halal-meat" href="<%= locals.host_name %>/latif-halal-meat">Latif Halal Meat<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="londis" data-store="londis" href="<%= locals.host_name %>/londis">Londis<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="m-n-norwood-halal-butchers" data-store="m-n-norwood-halal-butchers" href="<%= locals.host_name %>/m-n-norwood-halal-butchers">M N Norwood Halal Butchers<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="madina-foods" data-store="madina-foods" href="<%= locals.host_name %>/madina-foods">Madina Foods<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="new-malden-food-centre" data-store="new-malden-food-centre" href="<%= locals.host_name %>/new-malden-food-centre">New Malden Food Centre<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="new-malden-super-store" data-store="new-malden-super-store" href="<%= locals.host_name %>/new-malden-super-store">New Malden Super Store<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="penge-halal-meat-market-and-grocery" data-store="penge-halal-meat-market-and-grocery" href="<%= locals.host_name %>/penge-halal-meat-market-and-grocery">Penge Halal Meat Market &amp; Grocery<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="plumstead-cash-and-carry" data-store="plumstead-cash-and-carry" href="<%= locals.host_name %>/plumstead-cash-and-carry">Plumstead Cash &amp; Carry<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="q-in-food-centre" data-store="q-in-food-centre" href="<%= locals.host_name %>/q-in-food-centre">Q In Food Centre<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="sjv-cash-and-carry" data-store="sjv-cash-and-carry" href="<%= locals.host_name %>/sjv-cash-and-carry">SJV Cash And Carry<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="savemore-spicy-foods" data-store="savemore-spicy-foods" href="<%= locals.host_name %>/savemore-spicy-foods">Savemore Spicy Foods<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="simple-fresh-fruit-and-vegetable" data-store="simple-fresh-fruit-and-vegetable" href="<%= locals.host_name %>/simple-fresh-fruit-and-vegetable">Simple Fresh Fruit And Vegetable<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="stop-shop-and-go" data-store="stop-shop-and-go" href="<%= locals.host_name %>/stop-shop-and-go">Stop Shop &amp; Go<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="tfc" data-store="tfc" href="<%= locals.host_name %>/tfc">TFC<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                                <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white store_level" id="taza-grocery-store" data-store="taza-grocery-store" href="<%= locals.host_name %>/taza-grocery-store">Taza Grocery Store<i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i> </a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-nav-item dropdown MenuDropdown_wrap">
+                        <a class="nav-link dropdown-toggle text-black remove_default_arrow MenuDropdown text-uppercase" id="CategoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu MenuDropdown_menu px-0 py-2 myMenuscrollBar" aria-labelledby="CategoryDropdown">
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/baby-care-and-food">Baby Care & Food <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                            
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/bakery">Bakery <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/baking">Baking <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/batteries-and-bulbs">Batteries & Bulbs <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/beer-lager-and-cider">Beer, Lager & Cider <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/biscuits-and-cakes">Biscuits & Cakes <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/canned-and-tinned-food">Canned & Tinned Food <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/cereals-and-breakfast">Cereals & Breakfast <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/chilled-foods">Chilled Foods <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/cigarettes-and-tobacco">Cigarettes & Tobacco <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/confectionery">Confectionery <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/cooking-ingredients">Cooking Ingredients <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/cooking-oil-and-ghee">Cooking Oil & Ghee <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/cooking-sauces-and-meal-kits">Cooking Sauces & Meal Kits <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/crisps-and-snacks">Crisps & Snacks <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/dairy-and-eggs">Dairy & Eggs <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/dry-fruits-and-nuts">Dry Fruits & Nuts <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/flour-rice-and-pasta">Flour, Rice & Pasta <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/food-colours-and-essence">Food Colours & Essence <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/frozen-foods">Frozen Foods <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/fruits-and-vegetables">Fruits & Vegetables <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/household-and-cleaning">Household & Cleaning <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/ice-cream-and-ice">Ice Cream & Ice <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/jam-honey-and-spreads">Jam, Honey & Spreads <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/meat-and-poultry">Meat & Poultry <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/medicines-and-healthcare">Medicines & Healthcare <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/noodles-and-soups">Noodles & Soups <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/olives-antipasti-pickles-and-chutneys">Olives, Antipasti, Pickles & Chutneys <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/pet-food-and-litter">Pet Food & Litter <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/pulses-and-wheat">Pulses & Wheat <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/ready-meals-salads-and-dips">Ready Meals, Salads & Dips <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/sauces-and-dressings">Sauces & Dressings <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/seafood">Seafood <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/soft-drinks">Soft Drinks <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/spices-herbs-and-seasoning">Spices, Herbs & Seasoning <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/spirits">Spirits <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/sugar-and-sweeteners">Sugar & Sweeteners <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/tea-coffee-and-hot-drinks">Tea, Coffee & Hot Drinks <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/toiletries-body-and-skincare">Toiletries, Body & Skincare <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        
+                            <li><a class="dropdown-item menudropdown-item align-items-center d-flex justify-content-between text-dark position-relative bg-white" href="<%= locals.host_name %>/store/wines-and-champagnes">Wines & Champagnes <i class="fa fa-angle-right text-black-50 opacity-75 ms-1"></i>  </a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item menu-nav-item d-none d-sm-block">
+                            <a class="nav-link text-black text-uppercase menu-border-hover" href="<%= locals.host_name %>/store-searcher">
+                                Store Finder
+                            </a>
+                        </li>
+                        <li class="nav-item menu-nav-item d-none d-sm-block">
+                            <a class="nav-link text-black text-uppercase menu-border-hover" href="<%= locals.host_name %>/grocery-near-me">
+                                Near me
+                            </a>
+                        </li>
+                        <li class="nav-item menu-nav-item d-none d-md-block">
+                            <a class="nav-link text-black text-uppercase menu-border-hover" href="<%= locals.host_name %>/contact">
+                                Contact us 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="dropdown_layer" class="d-none position-absolute z-index-99"></div>
+    </div>
+    <!-- Login Modal Start -->
+    <div class="modal fade" id="Signin" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <!-- Signin Content Start -->
+        <div class="modal-content" id="SigninContent">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="btn-close shadow-none closeSigninModals" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="login-form" name="login-form" method="post" action="/user-login">
+                <input type="hidden" value="manual" name="login_by" id="login_by"/>
+                <input type="hidden" value="" name="social_id" id="social_id"/>
+                <div class="form-group mb-3">
+                    <label>Email or phone number</label>
+                    <input class="form-control shadow-none" name="useremail" id="useremail" type="email">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Password</label>
+                    <input class="form-control shadow-none" name="password" id="password" type="password">
+                </div>
+                <div id="error_msg" class="fontsize-14 text-center text-theme"></div>
+                <div class="row">
+                    <div class="col-6 col-signin-modal-footer">
+                        <span class="d-block text-decoration-none text-theme cursor-pointer" id="forgotpassBtn">Forgot password</span>
+                        <span class="d-block text-decoration-none mt-2 text-theme cursor-pointer" id="SignupBtn">Sign Up</span>
+                    </div>
+                    <div class="col-6 col-signin-modal-footer pt-2 text-end">
+                        <button id="btn-login" name="btn-login" class="border-0 text-decoration-none btn-signin text-white bg-theme cursor-pointer">Login</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+        <!-- Signin Content End -->
+    
+        <!-- Forgot Password Content Start -->
+        <div class="modal-content" id="forgotpassContent">
+          <div class="modal-header">
+            <h5 class="modal-title" id="forgot_password_title">Forgot password</h5>
+            <button type="button" class="btn-close shadow-none closeSigninModals" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="send_forgot_password">
+                <form id="forgot_password" method="post" action="/forgot-password">
+                    <div class="form-group mb-3">
+                        <label>Email</label>
+                        <input class="form-control shadow-none" name="user-forgot-email" id="user-forgot-email" type="email">
+                        <small id="forgot-email-msg"></small>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-signin-modal-footer pt-2 text-end">
+                            <input type="submit" class="border-0 text-decoration-none btn-signin text-white bg-theme cursor-pointer" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="check_email">
+                <p class="text-secondary">
+                    A password reset link was sent. Click the link in the email to create a new password. 
+                    If you do not receive an email within 5 minutes, please click the re-send email link below.
+                </p>
+                <div class="border-top text-center pt-2">
+                    <button class="bg-theme btn-cart cursor-pointer d-inline-block m-0 text-decoration-none text-white mt-1" id="resend_forgot_password" type="button">Re-send Email</button>
+                    <button class="btn-cart cursor-pointer d-inline-block m-0 text-decoration-none mt-1" type="button" id="return_from_forgot_password" data-bs-dismiss="modal" aria-label="Close">Return to Home</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- Forgot Password Content End -->
+    
+        <!-- SignUp Content Start -->
+        <div class="modal-content" id="SignupContent">
+          <div class="modal-header">
+            <h5 class="modal-title">Sign Up</h5>
+            <button type="button" class="btn-close shadow-none closeSigninModals" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="register-form" name="register-form" method="post">
+                <div class="form-group mb-3">
+                    <label>Name</label>
+                    <input required class="form-control shadow-none" name="first_name" type="text" placeholder="Name">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Surname</label>
+                    <input required class="form-control shadow-none" name="last_name" type="text" placeholder="Surname">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Email</label>
+                    <input required class="form-control shadow-none" name="email" type="email" placeholder="Email">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Password</label>
+                    <div class="input-group">
+                        <input required class="form-control shadow-none" id="register_pass" name="password" type="password" placeholder="Password">
+                        <div class="input-group-append">
+                            <span class="input-group-text h-100 bg-white cursor-pointer pass_eye" id="passToggler">
+                                <i class="fa fa-eye fontsize-13"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <small id="pass_error" class="fontsize-13 text-theme"></small>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Number</label>
+                    <div class="input-group">
+                        <!-- <input class="form-control shadow-none tel-code" type="tel" value="+44"> -->
+                        <div class="nav-item dropdown border">
+                            <a class="nav-link dropdown-toggle d-block p-2 text-decoration-none text-dark" id="lang"  role="button" data-bs-toggle="dropdown">+44</a>
+                            <ul class="dropdown-menu dropdown-menu-end py-0 lang-ul">
+                                <li><span class="dropdown-item">+44</span></li>
+                            </ul>
+                        </div>
+                        <input required class="form-control shadow-none" name="phone" type="tel" placeholder="Number">
+                    </div>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input shadow-none" type="checkbox" name="userAgree" value="" id="userAgree" required>
+                    <label class="form-check-label fontsize-15" for="userAgree">
+                        By continuing, you agree our 
+                        <a href="#" class="text-theme text-decoration-none">Terms And Conditions</a> 
+                        and 
+                        <a href="#" class="text-theme text-decoration-none">Privacy policy</a>
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col-12 pb-2 text-end">
+                        <button type="submit" name="register" class="border-0 text-decoration-none btn-signin text-white bg-theme cursor-pointer">Sign Up</button>
+                    </div>
+                    <div class="col-12">
+                        <h5>Already an account?</h5>
+                        <span id="SigninBtn" class="text-decoration-none mt-2 text-theme cursor-pointer">Login</span>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+        <!-- SignUp Content End -->
+      </div>
+    </div>
+    <!-- Login Modal End -->
+<input type="hidden" id="localsDevice" value="<%= locals.device %>">

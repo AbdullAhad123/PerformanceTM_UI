@@ -1,0 +1,155 @@
+/* footer css starts*/
+
+
+.new_footer_top,
+.sidenav {
+  overflow-x: hidden;
+}
+
+.btn_get_two,
+.new_footer_top .f_social_icon a:hover {
+  border-color: #5e2ced;
+  background: #5e2ced;
+  color: #fff;
+}
+
+@media screen and (min-width: 900px) {
+    #Productmain,
+    .new_footer {
+      transition: margin-left 0.5s;
+    }
+    .productsidenav {
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    #Productmain,
+    .new_footer {
+      transition: margin-left 0.5s;
+      margin-left: 0;
+    }
+    .productsidenav {
+      left: 0;
+    }
+  }
+
+  .pro_detail_footer {
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: inset 0 4px 27px -9px rgb(0 0 0 / 30%);
+  }
+  .footer .row .anchor a {
+    display: block;
+    text-decoration: none;
+    padding: 0.7rem 0rem;
+    color: #000000;
+    font-weight: 500;
+    text-align: start;
+    transition: all 0.2s ease-in;
+  }
+  .footer .row .anchor a:hover {
+    color: red;
+  }
+  .footer .row .anchor h4 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #000000;
+  }
+  .footer .copyright p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+  }
+  .footer {
+    max-width: 1100px;
+  }
+  .pro_detail_footer {
+    padding: 0 10px !important;
+  }
+  @media screen and (max-width: 305px) {
+    .col-signin-modal-footer {
+      width: 100% !important;
+    }
+  }
+
+
+  /* social links  */
+
+  .social-links a {
+    padding: 2px;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    line-height: 40px;
+    color: #fff;
+    transition: 0.5s;
+    box-shadow: 0 0 9px 0 rgb(0 0 0 / 30%);
+  }
+  .social-links .youtube {
+    background: #ff0000;
+  }
+  .social-links .instagram {
+    background: radial-gradient(
+      circle at 30% 110%,
+      #ffdb8b 0%,
+      #ee653d 25%,
+      #d42e81 50%,
+      #a237b6 75%,
+      #3e5fbc 100%
+    );
+  }
+  .social-links .youtube:hover {
+    color: #ff0000;
+  }
+  .social-links .instagram:hover {
+    color: #fd1d1d;
+    background: #fff;
+  }
+  .social-links .facebook {
+    background: #3b5999;
+  }
+  .social-links .twitter {
+    background: #55acee;
+  }
+  .social-links .linkedin {
+    background: #0077b5;
+  }
+  .social-links a i {
+    transition: transform 0.3s;
+  }
+  .social-links a:hover i {
+    transform: rotate(360deg);
+  }
+  .social-links a:hover {
+    background-color: #fff;
+  }
+  .social-links .facebook:hover {
+    color: #3b5999;
+  }
+  .social-links .twitter:hover {
+    color: #55acee;
+  }
+  .social-links .linkedin:hover {
+    color: #0077b5;
+  }
+
+
+  @media screen and (max-width: 480px) {
+    .col-footer-quick-link,
+    .col-footer-help {
+      width: 50% !important;
+    }
+    .col-footer-services {
+      width: 100% !important;
+    }
+  }
+  @media screen and (max-width: 290px) {
+    .col-footer-quick-link,
+    .col-footer-help {
+      width: 100% !important;
+    }
+  }
+
+/* footer css ends  */
